@@ -1,0 +1,146 @@
+/* Faction Page Styles */
+:root {
+    --marvel-red: #ED1D24;
+    --marvel-dark: #121212;
+    --marvel-light: #F0F0F0;
+    --transition-speed: 0.3s;
+}
+
+.page-content {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+    background-color: var(--marvel-dark);
+}
+
+.faction-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.faction-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.faction-header h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    color: var(--marvel-light);
+    text-shadow: 0 0 10px var(--marvel-red);
+    margin-bottom: 1rem;
+}
+
+.faction-subtitle {
+    font-size: 1.5rem;
+    color: var(--marvel-red);
+    font-weight: 500;
+}
+
+.faction-description {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    color: var(--marvel-light);
+}
+
+.faction-members {
+    padding: 2rem 0;
+}
+
+.faction-members h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: var(--marvel-light);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.member-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform var(--transition-speed);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(237, 29, 36, 0.2);
+}
+
+.member-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.member-card h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    color: var(--marvel-light);
+    padding: 1rem;
+    margin: 0;
+}
+
+.member-card p {
+    color: var(--marvel-red);
+    padding: 0 1rem 1rem;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faction-header h1 {
+        font-size: 3rem;
+    }
+
+    .faction-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .faction-description {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faction-header,
+.faction-description,
+.member-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.member-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.member-card:nth-child(3) {
+    animation-delay: 0.4s;
+}

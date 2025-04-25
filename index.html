@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Marvel Fan Universe - The ultimate destination for Marvel fans to explore heroes, news, and all things MCU."
+    />
+    <meta
+      name="keywords"
+      content="Marvel, MCU, superheroes, Avengers, X-Men, Guardians, Fantastic Four"
+    />
+    <title>Marvel Fan Universe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .faq-section {
+        padding: 60px 20px;
+        background: #000;
+        color: #fff;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #333;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-question {
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .faq-question:hover {
+        background: rgba(230, 36, 41, 0.1);
+      }
+
+      .faq-question h3 {
+        margin: 0;
+        font-size: 1.1em;
+        color: #fff;
+        flex: 1;
+      }
+
+      .faq-toggle {
+        color: #e62429;
+        font-size: 24px;
+        transition: transform 0.3s ease;
+        margin-left: 15px;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .faq-answer p {
+        margin: 0;
+        padding: 20px;
+        color: #ccc;
+        line-height: 1.6;
+      }
+
+      .faq-answer ul {
+        margin: 0;
+        padding: 0 20px 20px 40px;
+        color: #ccc;
+      }
+
+      .faq-answer li {
+        margin: 8px 0;
+        line-height: 1.5;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(45deg);
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 2000px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-family: "Bangers", cursive;
+        font-size: 1.2em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 0.3s ease, transform 0.2s ease;
+        display: inline-block;
+      }
+
+      .nav-links a:hover {
+        color: #ed1d24;
+        transform: scale(1.05);
+      }
+
+      .nav-links a.active {
+        color: #ed1d24;
+        position: relative;
+      }
+
+      .nav-links a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #ed1d24;
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .hero-buttons {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #e62429;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #cc0000;
+        transform: scale(1.05);
+      }
+
+      .contact-section {
+        padding: 60px 20px;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-form {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #333;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #fff;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #444;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #e62429;
+      }
+
+      .submit-button {
+        background-color: #e62429;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .submit-button:hover {
+        background-color: #cc0000;
+        transform: scale(1.05);
+      }
+
+      .contact-success {
+        text-align: center;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        border: 1px solid #333;
+      }
+
+      .contact-success h3 {
+        color: #e62429;
+        margin-bottom: 10px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .admin-section {
+        padding: 40px 20px;
+        background: #000;
+        color: #fff;
+      }
+
+      .messages-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .message-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      .message-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+
+      .message-subject {
+        font-size: 1.2em;
+        color: #e62429;
+        margin-bottom: 10px;
+      }
+
+      .message-info {
+        font-size: 0.9em;
+        color: #888;
+      }
+
+      .message-content {
+        line-height: 1.5;
+      }
+
+      .event-details {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 15px;
+      }
+
+      .event-details.hidden {
+        display: none;
+      }
+
+      .event-details h4 {
+        color: #e62429;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      .event-details h5 {
+        color: #fff;
+        margin: 15px 0 8px;
+        font-size: 1.1em;
+      }
+
+      .event-content {
+        color: #fff;
+        line-height: 1.6;
+      }
+
+      .event-content ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      .event-content li {
+        margin-bottom: 5px;
+      }
+
+      .read-more-btn {
+        background: #e62429;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .read-more-btn:hover {
+        background: #c41e23;
+      }
+    </style>
+  </head>
+  <body>
+    <audio src="The Avengers (mp3cut.net).mp3"></audio>
+    <div class="intro-animation" id="introAnimation">
+      <div class="comic-panel">
+        <img src="marvellogo.webp" alt="Marvel Logo" />
+      </div>
+    </div>
+
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">MFU</div>
+        <div class="search-container">
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search Marvel content..."
+              oninput="handleSearch()"
+            />
+            <div class="search-suggestions" id="searchSuggestions"></div>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#heroes" class="nav-link">Heroes</a></li>
+          <li><a href="#factions" class="nav-link">Teams & Factions</a></li>
+          <li><a href="#timeline" class="nav-link">Timeline</a></li>
+          <li><a href="#latest-events" class="nav-link">Events</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+        </ul>
+        <button class="mobile-menu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero-section">
+        <h1 class="main-title">Welcome to the Marvel Fan Universe</h1>
+        <p class="subtitle">Your ultimate destination for all things Marvel</p>
+        <div class="hero-buttons">
+          <a href="quiz.html" class="cta-button">Take the Marvel Quiz!</a>
+        </div>
+      </section>
+
+      <section id="heroes" class="heroes-section">
+        <h2>Featured Heroes</h2>
+        <div class="hero-cards">
+          <a href="heroes/iron-man.html" class="hero-card" data-hero="iron-man">
+            <img src="image.png" alt="Iron Man" loading="lazy" />
+            <div class="hero-info">
+              <h3>Iron Man</h3>
+              <p>Tony Stark</p>
+            </div>
+          </a>
+          <a
+            href="heroes/captain-america.html"
+            class="hero-card"
+            data-hero="captain-america"
+          >
+            <img src="cap.webp" alt="Captain America" loading="lazy" />
+            <div class="hero-info">
+              <h3>Captain America</h3>
+              <p>Steve Rogers</p>
+            </div>
+          </a>
+          <a href="heroes/thor.html" class="hero-card" data-hero="thor">
+            <img src="thor.jpg" alt="Thor" loading="lazy" />
+            <div class="hero-info">
+              <h3>Thor</h3>
+              <p>Thor Odinson</p>
+            </div>
+          </a>
+          <a
+            href="heroes/black-widow.html"
+            class="hero-card"
+            data-hero="black-widow"
+          >
+            <img src="bw.jpg" alt="Black Widow" loading="lazy" />
+            <div class="hero-info">
+              <h3>Black Widow</h3>
+              <p>Natasha Romanoff</p>
+            </div>
+          </a>
+          <a
+            href="heroes/spider-man.html"
+            class="hero-card"
+            data-hero="spider-man"
+          >
+            <img src="spiderman.jpg" alt="Spider-Man" loading="lazy" />
+            <div class="hero-info">
+              <h3>Spider-Man</h3>
+              <p>Peter Parker</p>
+            </div>
+          </a>
+          <a href="heroes/hawkeye.html" class="hero-card" data-hero="hawkeye">
+            <img src="hawkeye(1).webp" alt="Hawkeye" loading="lazy" />
+            <div class="hero-info">
+              <h3>Hawkeye</h3>
+              <p>Clint Barton</p>
+            </div>
+          </a>
+          <a href="heroes/loki.html" class="hero-card" data-hero="loki">
+            <img src="loki.webp" alt="Loki" loading="lazy" />
+            <div class="hero-info">
+              <h3>Loki</h3>
+              <p>God of Mischief</p>
+            </div>
+          </a>
+          <a
+            href="heroes/doctor-strange.html"
+            class="hero-card"
+            data-hero="doctor-strange"
+          >
+            <img
+              src="doctor strange.webp"
+              alt="Doctor Strange"
+              loading="lazy"
+            />
+            <div class="hero-info">
+              <h3>Doctor Strange</h3>
+              <p>Stephen Strange</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="factions" class="factions-section">
+        <h2>Marvel Teams & Factions</h2>
+        <div class="faction-cards">
+          <div class="faction-card" data-faction="avengers">
+            <img src="avengers.webp" alt="Avengers" loading="lazy" />
+            <div class="faction-info">
+              <h3>The Avengers</h3>
+              <p>Earth's Mightiest Heroes</p>
+            </div>
+          </div>
+          <div class="faction-card" data-faction="x-men">
+            <img src="X men.webp" alt="X-Men" loading="lazy" />
+            <div class="faction-info">
+              <h3>X-Men</h3>
+              <p>Children of the Atom</p>
+            </div>
+          </div>
+          <div class="faction-card" data-faction="fantastic-four">
+            <img src="F4.webp" alt="Fantastic Four" loading="lazy" />
+            <div class="faction-info">
+              <h3>Fantastic Four</h3>
+              <p>Marvel's First Family</p>
+            </div>
+          </div>
+          <div class="faction-card" data-faction="guardians">
+            <img src="GOTG.webp" alt="Guardians of the Galaxy" loading="lazy" />
+            <div class="faction-info">
+              <h3>Guardians of the Galaxy</h3>
+              <p>Defenders of the Cosmos</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="latest-events" class="events-section">
+        <div class="section-header">
+          <h2>Latest Marvel Events</h2>
+          <p>Stay updated with the most recent Marvel storylines</p>
+        </div>
+        <div class="events-grid">
+          <div class="event-card">
+            <img src="venom war.webp" alt="Venom War" loading="lazy" />
+            <div class="event-info">
+              <h3>Venom War</h3>
+              <p class="event-preview">
+                The symbiote invasion begins as Venom leads the charge against a
+                new threat...
+              </p>
+              <button class="read-more-btn" onclick="toggleEventDetails(this)">
+                Read More
+              </button>
+              <div class="event-details hidden">
+                <h4>Venom War: The Symbiote Apocalypse</h4>
+                <p>Release Date: March 2025</p>
+                <div class="event-content">
+                  <h5>Event Overview</h5>
+                  <p>
+                    When a mysterious cosmic entity awakens ancient symbiotes
+                    across the universe, Eddie Brock and his son Dylan must
+                    unite Earth's heroes to prevent a symbiote apocalypse.
+                  </p>
+
+                  <h5>Key Plot Points</h5>
+                  <ul>
+                    <li>
+                      Ancient symbiote god Knull's dormant seeds begin awakening
+                      across the galaxy
+                    </li>
+                    <li>Dylan Brock discovers he can control all symbiotes</li>
+                    <li>
+                      The Avengers and X-Men must work with Venom to prevent
+                      Earth's infection
+                    </li>
+                    <li>
+                      Flash Thompson returns as Anti-Venom with crucial
+                      information
+                    </li>
+                  </ul>
+
+                  <h5>Major Players</h5>
+                  <ul>
+                    <li>Eddie Brock (Venom)</li>
+                    <li>Dylan Brock</li>
+                    <li>Flash Thompson (Anti-Venom)</li>
+                    <li>Carnage</li>
+                    <li>The Life Foundation Symbiotes</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <img src="doom's reign.webp" alt="Doom's Reign" loading="lazy" />
+            <div class="event-info">
+              <h3>Doom's Reign</h3>
+              <p class="event-preview">
+                Doctor Doom finally achieves his ultimate goal, but at what
+                cost?
+              </p>
+              <button class="read-more-btn" onclick="toggleEventDetails(this)">
+                Read More
+              </button>
+              <div class="event-details hidden">
+                <h4>Doom's Reign: The Age of Latveria</h4>
+                <p>Release Date: April 2025</p>
+                <div class="event-content">
+                  <h5>Event Overview</h5>
+                  <p>
+                    Victor von Doom discovers a way to harness the power of
+                    multiple cosmic entities, establishing a new world order
+                    with Latveria at its center. As reality begins to warp under
+                    his rule, heroes must decide whether to resist or adapt to
+                    Doom's perfect world.
+                  </p>
+
+                  <h5>Key Plot Points</h5>
+                  <ul>
+                    <li>
+                      Doom combines the Power Cosmic, Phoenix Force, and
+                      mystical artifacts
+                    </li>
+                    <li>
+                      Reality warps as Latveria becomes the center of human
+                      civilization
+                    </li>
+                    <li>
+                      The Fantastic Four discover a resistance movement from an
+                      alternate timeline
+                    </li>
+                    <li>
+                      Several heroes choose to serve Doom, believing his world
+                      is better
+                    </li>
+                  </ul>
+
+                  <h5>Major Players</h5>
+                  <ul>
+                    <li>Doctor Doom</li>
+                    <li>Reed Richards</li>
+                    <li>Doctor Strange</li>
+                    <li>Namor</li>
+                    <li>The Resistance (led by Sue Storm)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-card">
+            <img
+              src="x men evolution.webp"
+              alt="X-Men: Evolution"
+              loading="lazy"
+            />
+            <div class="event-info">
+              <h3>X-Men: Evolution</h3>
+              <p class="event-preview">
+                A new era begins for mutantkind as evolution takes an unexpected
+                turn...
+              </p>
+              <button class="read-more-btn" onclick="toggleEventDetails(this)">
+                Read More
+              </button>
+              <div class="event-details hidden">
+                <h4>X-Men: Evolution - The Next Step</h4>
+                <p>Release Date: May 2025</p>
+                <div class="event-content">
+                  <h5>Event Overview</h5>
+                  <p>
+                    A mysterious phenomenon causes mutants worldwide to undergo
+                    a secondary mutation, granting them enhanced abilities but
+                    at a terrible cost. As the X-Men race to understand this
+                    evolution, they discover a shocking truth about mutation's
+                    ultimate purpose.
+                  </p>
+
+                  <h5>Key Plot Points</h5>
+                  <ul>
+                    <li>
+                      Global secondary mutation crisis affects all mutants
+                    </li>
+                    <li>Discovery of an ancient mutant civilization</li>
+                    <li>
+                      Jean Grey establishes a psychic network to help control
+                      new powers
+                    </li>
+                    <li>Revelation about humanity's evolutionary destiny</li>
+                  </ul>
+
+                  <h5>Major Players</h5>
+                  <ul>
+                    <li>Charles Xavier</li>
+                    <li>Jean Grey</li>
+                    <li>Magneto</li>
+                    <li>The Evolutionary</li>
+                    <li>The First Mutant (new character)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="timeline-section">
+        <div class="section-header">
+          <h2>Marvel Timeline</h2>
+          <p>
+            Journey through the epic moments that shaped the Marvel Cinematic
+            Universe
+          </p>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2008</div>
+              <h3>Iron Man</h3>
+              <p>The birth of the MCU with Tony Stark becoming Iron Man.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2008</div>
+              <h3>The Incredible Hulk</h3>
+              <p>Bruce Banner's struggle with the Hulk.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2010</div>
+              <h3>Iron Man 2</h3>
+              <p>Tony Stark faces new threats and meets Black Widow.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2011</div>
+              <h3>Thor</h3>
+              <p>The God of Thunder arrives on Earth.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2011</div>
+              <h3>Captain America: The First Avenger</h3>
+              <p>Steve Rogers becomes Captain America during WWII.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2012</div>
+              <h3>The Avengers</h3>
+              <p>Earth's Mightiest Heroes assemble for the first time.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2013</div>
+              <h3>Iron Man 3</h3>
+              <p>Tony Stark faces the Mandarin threat.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2013</div>
+              <h3>Thor: The Dark World</h3>
+              <p>Thor battles Dark Elves across the Nine Realms.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2014</div>
+              <h3>Captain America: The Winter Soldier</h3>
+              <p>SHIELD falls as HYDRA is revealed.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2014</div>
+              <h3>Guardians of the Galaxy</h3>
+              <p>A group of misfits becomes unlikely heroes.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2015</div>
+              <h3>Avengers: Age of Ultron</h3>
+              <p>The Avengers face an AI threat of their own making.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2015</div>
+              <h3>Ant-Man</h3>
+              <p>Scott Lang becomes the size-changing hero.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2016</div>
+              <h3>Captain America: Civil War</h3>
+              <p>The Avengers are divided over the Sokovia Accords.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2016-2017</div>
+              <h3>Phase 3 & TV Series</h3>
+              <p>
+                Doctor Strange, Spider-Man: Homecoming, Black Panther, Netflix
+                series.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2018</div>
+              <h3>Avengers: Infinity War</h3>
+              <p>Thanos collects the Infinity Stones.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2019</div>
+              <h3>Avengers: Endgame</h3>
+              <p>The epic conclusion to the Infinity Saga.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2020-2023</div>
+              <h3>Phase 4</h3>
+              <p>
+                WandaVision, Loki, Black Widow, Shang-Chi, Eternals, Spider-Man:
+                No Way Home
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">2023-2025</div>
+              <h3>Phase 5 & 6</h3>
+              <p>Ant-Man 3, Guardians Vol. 3, The Marvels, upcoming projects</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="admin" class="admin-section hidden">
+        <div class="section-header">
+          <h2>Admin Panel - Contact Messages</h2>
+        </div>
+        <div class="messages-container">
+          <div id="messages-list"></div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Get answers to common questions about Marvel and our community</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>What is the Marvel Cinematic Universe (MCU)?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                The Marvel Cinematic Universe (MCU) is a groundbreaking
+                interconnected series of superhero films and TV shows based on
+                Marvel Comics characters. Key aspects include:
+              </p>
+              <ul>
+                <li>
+                  Launched in 2008 with Iron Man, now spanning multiple phases
+                </li>
+                <li>
+                  Features a shared universe where events of one film affect
+                  others
+                </li>
+                <li>
+                  Includes major franchises like Avengers, Thor, and Spider-Man
+                </li>
+                <li>
+                  Currently expanding into the multiverse with Phase 4 and
+                  beyond
+                </li>
+                <li>
+                  Has grossed over $22 billion worldwide, making it the
+                  highest-grossing film franchise
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>How do I start reading Marvel Comics?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Getting started with Marvel Comics is easier than you might
+                think:
+              </p>
+              <ul>
+                <li>
+                  <strong>Digital Platforms:</strong>
+                  <ul>
+                    <li>
+                      Marvel Unlimited: Subscription service with 27,000+ comics
+                    </li>
+                    <li>Comixology: Digital store for individual purchases</li>
+                    <li>Marvel Comics App: Official app for mobile reading</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Recommended Starting Points:</strong>
+                  <ul>
+                    <li>
+                      Ultimate Spider-Man: Modern retelling of Spider-Man's
+                      origin
+                    </li>
+                    <li>Avengers: Earth's Mightiest Heroes</li>
+                    <li>House of M: Popular event series</li>
+                    <li>Civil War: Major crossover event</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>What's the difference between Marvel Comics and MCU?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                While both share characters and stories, there are key
+                differences:
+              </p>
+              <ul>
+                <li>Comics have a longer history, starting in 1939</li>
+                <li>MCU adapts and simplifies comic storylines for film</li>
+                <li>
+                  Comics feature more complex narratives and character
+                  relationships
+                </li>
+                <li>
+                  MCU maintains a single timeline, while comics have multiple
+                  universes
+                </li>
+                <li>
+                  Comics introduce new characters and storylines that may later
+                  appear in the MCU
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>Who are the main Marvel superhero teams?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Marvel features several iconic superhero teams, each with unique
+                characteristics:
+              </p>
+              <ul>
+                <li>
+                  <strong>The Avengers:</strong> Earth's mightiest heroes,
+                  including Iron Man, Captain America, and Thor
+                </li>
+                <li>
+                  <strong>X-Men:</strong> Mutant heroes fighting for equality
+                  and survival
+                </li>
+                <li>
+                  <strong>Fantastic Four:</strong> Marvel's first family of
+                  superheroes
+                </li>
+                <li><strong>Guardians of the Galaxy:</strong> Cosmic heroes</li>
+                <li>
+                  <strong>Defenders:</strong> Street-level heroes protecting
+                  their neighborhoods
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>How can I participate in the Marvel fan community?</h3>
+              <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>There are many ways to engage with fellow Marvel fans:</p>
+              <ul>
+                <li>
+                  <strong>Online Communities:</strong>
+                  <ul>
+                    <li>Join Marvel fan forums and discussion boards</li>
+                    <li>Follow Marvel social media accounts</li>
+                    <li>Participate in Marvel subreddits</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Events & Activities:</strong>
+                  <ul>
+                    <li>Attend comic conventions</li>
+                    <li>Join local fan meetups</li>
+                    <li>Participate in cosplay events</li>
+                    <li>Create and share fan art</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="guidelines" class="guidelines-section">
+        <div class="section-header">
+          <h2>Community Guidelines</h2>
+          <p>Help us maintain a friendly and inclusive Marvel community</p>
+        </div>
+        <div class="guidelines-container">
+          <div class="guideline-card">
+            <h3>Be Respectful</h3>
+            <p>
+              Treat fellow fans with respect, regardless of their favorite
+              characters or opinions.
+            </p>
+          </div>
+          <div class="guideline-card">
+            <h3>No Spoilers</h3>
+            <p>
+              Use spoiler tags for recent content and be mindful of others'
+              viewing experience.
+            </p>
+          </div>
+          <div class="guideline-card">
+            <h3>Stay On Topic</h3>
+            <p>
+              Keep discussions related to Marvel and its associated content.
+            </p>
+          </div>
+          <div class="guideline-card">
+            <h3>Be Creative</h3>
+            <p>
+              Share your fan theories, artwork, and creative content while
+              respecting copyright.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Have questions or suggestions? We'd love to hear from you!</p>
+        </div>
+        <div class="contact-container">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+          </form>
+          <div id="contact-success" class="contact-success hidden">
+            <h3>Thank you for your message!</h3>
+            <p>We'll get back to you as soon as possible.</p>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const formData = {
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value,
+              subject: document.getElementById("subject").value,
+              message: document.getElementById("message").value,
+            };
+
+            try {
+              const response = await fetch(
+                "http://localhost:5000/api/contact",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(formData),
+                }
+              );
+
+              const result = await response.json();
+
+              if (result.success) {
+                document.getElementById("contact-form").style.display = "none";
+                document
+                  .getElementById("contact-success")
+                  .classList.remove("hidden");
+              } else {
+                alert("Error sending message. Please try again.");
+              }
+            } catch (error) {
+              console.error("Error:", error);
+              alert("Error sending message. Please try again.");
+            }
+          });
+      </script>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Marvel Fan Universe. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqItems = document.querySelectorAll(".faq-item");
+
+        faqItems.forEach((item) => {
+          const question = item.querySelector(".faq-question");
+          const answer = item.querySelector(".faq-answer");
+
+          question.addEventListener("click", () => {
+            const isActive = item.classList.contains("active");
+
+            // Close all other items
+            faqItems.forEach((otherItem) => {
+              otherItem.classList.remove("active");
+              const otherAnswer = otherItem.querySelector(".faq-answer");
+              otherAnswer.style.maxHeight = "0";
+            });
+
+            // Toggle current item
+            if (!isActive) {
+              item.classList.add("active");
+              answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+          });
+        });
+      });
+    </script>
+    <script>
+      function toggleFAQ(element) {
+        const faqItem = element.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            item.classList.remove('active');
+            const otherAnswer = item.querySelector('.faq-answer');
+            otherAnswer.style.maxHeight = '0';
+          }
+        });
+        
+        // Toggle current FAQ
+        const isActive = faqItem.classList.contains('active');
+        faqItem.classList.toggle('active');
+        
+        if (isActive) {
+          answer.style.maxHeight = '0';
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      }
+
+      // Initialize FAQ items on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+          answer.style.maxHeight = '0';
+        });
+      });
+
+      // Update heights on window resize
+      window.addEventListener('resize', () => {
+        const activeFAQ = document.querySelector('.faq-item.active');
+        if (activeFAQ) {
+          const answer = activeFAQ.querySelector('.faq-answer');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    </script>
+    <script>
+      const searchSuggestions = {
+        heroes: [
+          { name: "Iron Man", link: "heroes/iron-man.html" },
+          { name: "Captain America", link: "heroes/captain-america.html" },
+          { name: "Thor", link: "heroes/thor.html" },
+          { name: "Black Widow", link: "heroes/black-widow.html" },
+          { name: "Hulk", link: "heroes/hulk.html" },
+          { name: "Spider-Man", link: "heroes/spider-man.html" },
+          { name: "Doctor Strange", link: "heroes/doctor-strange.html" },
+          { name: "Black Panther", link: "heroes/black-panther.html" },
+          { name: "Captain Marvel", link: "heroes/captain-marvel.html" },
+          { name: "Hawkeye", link: "heroes/hawkeye.html" },
+        ],
+        sections: [
+          { name: "Quiz", link: "quiz.html" },
+          { name: "FAQ", link: "#faq" },
+          { name: "Contact", link: "#contact" },
+          { name: "Timeline", link: "#timeline" },
+        ],
+      };
+
+      function handleSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const searchTerm = searchInput.value.toLowerCase();
+        const suggestionsDiv = document.getElementById("searchSuggestions");
+
+        if (searchTerm === "") {
+          suggestionsDiv.innerHTML = "";
+          suggestionsDiv.style.display = "none";
+          return;
+        }
+
+        let suggestions = [];
+
+        // Search in heroes
+        suggestions = suggestions.concat(
+          searchSuggestions.heroes
+            .filter((hero) => hero.name.toLowerCase().includes(searchTerm))
+            .map((hero) => ({
+              name: hero.name,
+              link: hero.link,
+              type: "Hero",
+            }))
+        );
+
+        // Search in sections
+        suggestions = suggestions.concat(
+          searchSuggestions.sections
+            .filter((section) =>
+              section.name.toLowerCase().includes(searchTerm)
+            )
+            .map((section) => ({
+              name: section.name,
+              link: section.link,
+              type: "Section",
+            }))
+        );
+
+        if (suggestions.length > 0) {
+          suggestionsDiv.innerHTML = suggestions
+            .map(
+              (item) => `
+              <a href="${item.link}" class="search-suggestion">
+                <span class="suggestion-type">${item.type}:</span>
+                <span class="suggestion-name">${item.name}</span>
+              </a>
+            `
+            )
+            .join("");
+          suggestionsDiv.style.display = "block";
+        } else {
+          suggestionsDiv.innerHTML = `
+            <div class="search-suggestion no-results">
+              No results found
+            </div>
+          `;
+          suggestionsDiv.style.display = "block";
+        }
+      }
+
+      // Close suggestions when clicking outside
+      document.addEventListener("click", function (e) {
+        const searchContainer = document.querySelector(".search-container");
+        const suggestionsDiv = document.getElementById("searchSuggestions");
+        if (!searchContainer.contains(e.target)) {
+          suggestionsDiv.style.display = "none";
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+    <script>
+      function toggleEventDetails(button) {
+        const details = button.nextElementSibling;
+        const isHidden = details.classList.contains("hidden");
+
+        // Close all other event details
+        document.querySelectorAll(".event-details").forEach((detail) => {
+          detail.classList.add("hidden");
+        });
+
+        // Toggle current event details
+        if (isHidden) {
+          details.classList.remove("hidden");
+          button.textContent = "Show Less";
+        } else {
+          details.classList.add("hidden");
+          button.textContent = "Read More";
+        }
+      }
+    </script>
+  </body>
+</html>

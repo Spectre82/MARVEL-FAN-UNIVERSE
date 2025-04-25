@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Comics Quiz - Marvel Fan Universe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .quiz-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .quiz-header h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 3em;
+            color: #e62429;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .question {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+        }
+
+        .question p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .option-label:hover {
+            background: rgba(230, 36, 41, 0.2);
+        }
+
+        .option-label input {
+            margin-right: 10px;
+        }
+
+        #submit-quiz, #retry {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background-color: #e62429;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #submit-quiz:hover, #retry:hover {
+            background-color: #cc0000;
+            transform: scale(1.05);
+        }
+
+        .result {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result h2 {
+            color: #e62429;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #444;
+        }
+
+        .leaderboard {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .leaderboard h3 {
+            color: #e62429;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .leaderboard-entry {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+            color: #fff;
+        }
+
+        .leaderboard-entry:last-child {
+            border-bottom: none;
+        }
+
+        .rank {
+            color: #e62429;
+            font-weight: bold;
+        }
+
+        .score {
+            color: #fff;
+        }
+
+        .date {
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+        <div class="quiz-header">
+            <h1>Ultimate Marvel Comics Quiz</h1>
+            <p>Test your knowledge of Marvel Comics with these challenging questions!</p>
+        </div>
+        <div id="quiz-form">
+            <div id="question-container"></div>
+            <button id="submit-quiz">Submit Quiz</button>
+        </div>
+        <div id="result" class="hidden">
+            <h2>Your Score: <span id="score"></span>/10</h2>
+            <p id="feedback"></p>
+            <div id="leaderboard" class="leaderboard"></div>
+            <button id="retry">Try Again</button>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
