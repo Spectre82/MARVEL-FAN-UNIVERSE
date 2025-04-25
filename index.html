@@ -381,7 +381,7 @@
     </header>
 
     <main>
-      <section id="home" class="hero-section">
+      <section id="home" class="hero-section" style="background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('marvel-red-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed; filter: brightness(1.3);">
         <h1 class="main-title">Welcome to the Marvel Fan Universe</h1>
         <p class="subtitle">Your ultimate destination for all things Marvel</p>
         <div class="hero-buttons">
@@ -390,7 +390,7 @@
       </section>
 
       <section id="heroes" class="heroes-section">
-        <h2>Featured Heroes</h2>
+        <div class="section-header"><h2 class="marvel-banger">Featured Heroes</h2></div>
         <div class="hero-cards">
           <a href="heroes/iron-man.html" class="hero-card" data-hero="iron-man">
             <img src="image.png" alt="Iron Man" loading="lazy" />
@@ -472,7 +472,7 @@
       </section>
 
       <section id="factions" class="factions-section">
-        <h2>Marvel Teams & Factions</h2>
+        <div class="section-header"><h2 class="marvel-banger">Marvel Teams & Factions</h2></div>
         <div class="faction-cards">
           <div class="faction-card" data-faction="avengers">
             <img src="avengers.webp" alt="Avengers" loading="lazy" />
@@ -511,168 +511,178 @@
           <p>Stay updated with the most recent Marvel storylines</p>
         </div>
         <div class="events-grid">
-          <div class="event-card">
-            <img src="venom war.webp" alt="Venom War" loading="lazy" />
-            <div class="event-info">
-              <h3>Venom War</h3>
-              <p class="event-preview">
-                The symbiote invasion begins as Venom leads the charge against a
-                new threat...
-              </p>
-              <button class="read-more-btn" onclick="toggleEventDetails(this)">
-                Read More
-              </button>
-              <div class="event-details hidden">
-                <h4>Venom War: The Symbiote Apocalypse</h4>
-                <p>Release Date: March 2025</p>
-                <div class="event-content">
-                  <h5>Event Overview</h5>
-                  <p>
-                    When a mysterious cosmic entity awakens ancient symbiotes
-                    across the universe, Eddie Brock and his son Dylan must
-                    unite Earth's heroes to prevent a symbiote apocalypse.
-                  </p>
+  <div class="event-card">
+    <div class="event-card-image">
+      <img src="venom war.webp" alt="Venom War" loading="lazy" />
+    </div>
+    <div class="event-card-info">
+      <div class="event-info">
+        <h3>Venom War</h3>
+        <p class="event-preview">
+          The symbiote invasion begins as Venom leads the charge against a
+          new threat...
+        </p>
+        <button class="read-more-btn" onclick="toggleEventDetails(this)">
+          Read More
+        </button>
+        <div class="event-details hidden">
+          <h4>Venom War: The Symbiote Apocalypse</h4>
+          <p>Release Date: March 2025</p>
+          <div class="event-content">
+            <h5>Event Overview</h5>
+            <p>
+              When a mysterious cosmic entity awakens ancient symbiotes
+              across the universe, Eddie Brock and his son Dylan must
+              unite Earth's heroes to prevent a symbiote apocalypse.
+            </p>
 
-                  <h5>Key Plot Points</h5>
-                  <ul>
-                    <li>
-                      Ancient symbiote god Knull's dormant seeds begin awakening
-                      across the galaxy
-                    </li>
-                    <li>Dylan Brock discovers he can control all symbiotes</li>
-                    <li>
-                      The Avengers and X-Men must work with Venom to prevent
-                      Earth's infection
-                    </li>
-                    <li>
-                      Flash Thompson returns as Anti-Venom with crucial
-                      information
-                    </li>
-                  </ul>
+            <h5>Key Plot Points</h5>
+            <ul>
+              <li>
+                Ancient symbiote god Knull's dormant seeds begin awakening
+                across the galaxy
+              </li>
+              <li>Dylan Brock discovers he can control all symbiotes</li>
+              <li>
+                The Avengers and X-Men must work with Venom to prevent
+                Earth's infection
+              </li>
+              <li>
+                Flash Thompson returns as Anti-Venom with crucial
+                information
+              </li>
+            </ul>
 
-                  <h5>Major Players</h5>
-                  <ul>
-                    <li>Eddie Brock (Venom)</li>
-                    <li>Dylan Brock</li>
-                    <li>Flash Thompson (Anti-Venom)</li>
-                    <li>Carnage</li>
-                    <li>The Life Foundation Symbiotes</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <h5>Major Players</h5>
+            <ul>
+              <li>Eddie Brock (Venom)</li>
+              <li>Dylan Brock</li>
+              <li>Flash Thompson (Anti-Venom)</li>
+              <li>Carnage</li>
+              <li>The Life Foundation Symbiotes</li>
+            </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="event-card">
-            <img src="doom's reign.webp" alt="Doom's Reign" loading="lazy" />
-            <div class="event-info">
-              <h3>Doom's Reign</h3>
-              <p class="event-preview">
-                Doctor Doom finally achieves his ultimate goal, but at what
-                cost?
-              </p>
-              <button class="read-more-btn" onclick="toggleEventDetails(this)">
-                Read More
-              </button>
-              <div class="event-details hidden">
-                <h4>Doom's Reign: The Age of Latveria</h4>
-                <p>Release Date: April 2025</p>
-                <div class="event-content">
-                  <h5>Event Overview</h5>
-                  <p>
-                    Victor von Doom discovers a way to harness the power of
-                    multiple cosmic entities, establishing a new world order
-                    with Latveria at its center. As reality begins to warp under
-                    his rule, heroes must decide whether to resist or adapt to
-                    Doom's perfect world.
-                  </p>
+  <div class="event-card">
+    <div class="event-card-image">
+      <img src="doom's reign.webp" alt="Doom's Reign" loading="lazy" />
+    </div>
+    <div class="event-card-info">
+      <div class="event-info">
+        <h3>Doom's Reign</h3>
+        <p class="event-preview">
+          Doctor Doom finally achieves his ultimate goal, but at what
+          cost?
+        </p>
+        <button class="read-more-btn" onclick="toggleEventDetails(this)">
+          Read More
+        </button>
+        <div class="event-details hidden">
+          <h4>Doom's Reign: The Age of Latveria</h4>
+          <p>Release Date: April 2025</p>
+          <div class="event-content">
+            <h5>Event Overview</h5>
+            <p>
+              Victor von Doom discovers a way to harness the power of
+              multiple cosmic entities, establishing a new world order
+              with Latveria at its center. As reality begins to warp under
+              his rule, heroes must decide whether to resist or adapt to
+              Doom's perfect world.
+            </p>
 
-                  <h5>Key Plot Points</h5>
-                  <ul>
-                    <li>
-                      Doom combines the Power Cosmic, Phoenix Force, and
-                      mystical artifacts
-                    </li>
-                    <li>
-                      Reality warps as Latveria becomes the center of human
-                      civilization
-                    </li>
-                    <li>
-                      The Fantastic Four discover a resistance movement from an
-                      alternate timeline
-                    </li>
-                    <li>
-                      Several heroes choose to serve Doom, believing his world
-                      is better
-                    </li>
-                  </ul>
+            <h5>Key Plot Points</h5>
+            <ul>
+              <li>
+                Doom combines the Power Cosmic, Phoenix Force, and
+                mystical artifacts
+              </li>
+              <li>
+                Reality warps as Latveria becomes the center of human
+                civilization
+              </li>
+              <li>
+                The Fantastic Four discover a resistance movement from an
+                alternate timeline
+              </li>
+              <li>
+                Several heroes choose to serve Doom, believing his world
+                is better
+              </li>
+            </ul>
 
-                  <h5>Major Players</h5>
-                  <ul>
-                    <li>Doctor Doom</li>
-                    <li>Reed Richards</li>
-                    <li>Doctor Strange</li>
-                    <li>Namor</li>
-                    <li>The Resistance (led by Sue Storm)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <h5>Major Players</h5>
+            <ul>
+              <li>Doctor Doom</li>
+              <li>Reed Richards</li>
+              <li>Doctor Strange</li>
+              <li>Namor</li>
+              <li>The Resistance (led by Sue Storm)</li>
+            </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="event-card">
-            <img
-              src="x men evolution.webp"
-              alt="X-Men: Evolution"
-              loading="lazy"
-            />
-            <div class="event-info">
-              <h3>X-Men: Evolution</h3>
-              <p class="event-preview">
-                A new era begins for mutantkind as evolution takes an unexpected
-                turn...
-              </p>
-              <button class="read-more-btn" onclick="toggleEventDetails(this)">
-                Read More
-              </button>
-              <div class="event-details hidden">
-                <h4>X-Men: Evolution - The Next Step</h4>
-                <p>Release Date: May 2025</p>
-                <div class="event-content">
-                  <h5>Event Overview</h5>
-                  <p>
-                    A mysterious phenomenon causes mutants worldwide to undergo
-                    a secondary mutation, granting them enhanced abilities but
-                    at a terrible cost. As the X-Men race to understand this
-                    evolution, they discover a shocking truth about mutation's
-                    ultimate purpose.
-                  </p>
+  <div class="event-card">
+    <div class="event-card-image">
+      <img src="x men evolution.webp" alt="X-Men: Evolution" loading="lazy" />
+    </div>
+    <div class="event-card-info">
+      <div class="event-info">
+        <h3>X-Men: Evolution</h3>
+        <p class="event-preview">
+          A new era begins for mutantkind as evolution takes an unexpected
+          turn...
+        </p>
+        <button class="read-more-btn" onclick="toggleEventDetails(this)">
+          Read More
+        </button>
+        <div class="event-details hidden">
+          <h4>X-Men: Evolution - The Next Step</h4>
+          <p>Release Date: May 2025</p>
+          <div class="event-content">
+            <h5>Event Overview</h5>
+            <p>
+              A mysterious phenomenon causes mutants worldwide to undergo
+              a secondary mutation, granting them enhanced abilities but
+              at a terrible cost. As the X-Men race to understand this
+              evolution, they discover a shocking truth about mutation's
+              ultimate purpose.
+            </p>
 
-                  <h5>Key Plot Points</h5>
-                  <ul>
-                    <li>
-                      Global secondary mutation crisis affects all mutants
-                    </li>
-                    <li>Discovery of an ancient mutant civilization</li>
-                    <li>
-                      Jean Grey establishes a psychic network to help control
-                      new powers
-                    </li>
-                    <li>Revelation about humanity's evolutionary destiny</li>
-                  </ul>
+            <h5>Key Plot Points</h5>
+            <ul>
+              <li>
+                Global secondary mutation crisis affects all mutants
+              </li>
+              <li>Discovery of an ancient mutant civilization</li>
+              <li>
+                Jean Grey establishes a psychic network to help control
+                new powers
+              </li>
+              <li>Revelation about humanity's evolutionary destiny</li>
+            </ul>
 
-                  <h5>Major Players</h5>
-                  <ul>
-                    <li>Charles Xavier</li>
-                    <li>Jean Grey</li>
-                    <li>Magneto</li>
-                    <li>The Evolutionary</li>
-                    <li>The First Mutant (new character)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <h5>Major Players</h5>
+            <ul>
+              <li>Charles Xavier</li>
+              <li>Jean Grey</li>
+              <li>Magneto</li>
+              <li>The Evolutionary</li>
+              <li>The First Mutant (new character)</li>
+            </ul>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
         </div>
       </section>
 

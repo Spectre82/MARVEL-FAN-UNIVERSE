@@ -14,6 +14,8 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--marvel-dark);
@@ -140,7 +142,7 @@ body {
     padding: 2rem;
     text-align: center;
     background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
-                url('https://images.pexels.com/photos/9613423/pexels-photo-9613423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+                url('marvel-red-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -356,15 +358,81 @@ body {
 }
 
 .event-card {
+    display: flex;
+    flex-direction: row;
     background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
-    padding: 2rem;
+    padding: 0;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    overflow: hidden;
+    min-height: 250px;
 }
+
+.event-card-image {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: stretch;
+}
+.event-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+    display: block;
+}
+
+.event-card-info {
+    flex: 1 1 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+@media (max-width: 900px) {
+    .event-card {
+        flex-direction: column;
+        min-height: unset;
+    }
+    .event-card-image, .event-card-info {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+    .event-card-image img {
+        border-radius: 12px 12px 0 0;
+        height: 220px;
+    }
+}
+
+/* Remove old event-card img rules */
 
 .event-card:hover {
     transform: translateY(-5px);
+}
+
+.event-card img {
+    width: 100%;
+    aspect-ratio: 2.67 / 1;
+    height: auto;
+    max-height: 340px;
+    display: block;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+@supports not (aspect-ratio: 2.67 / 1) {
+  .event-card img {
+    height: 220px;
+  }
+}
+
+.event-card-content {
+    padding: 1rem;
 }
 
 .event-card h3 {
@@ -540,6 +608,19 @@ section {
     padding: 8rem 2rem;
     position: relative;
     overflow: hidden;
+}
+
+.marvel-banger {
+    font-family: 'Bangers', cursive !important;
+    text-align: center;
+    color: var(--marvel-red);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 100%;
 }
 
 section:not(:first-child)::before {
@@ -752,7 +833,7 @@ section:not(:first-child)::before {
 /* Contact Section */
 .contact-section {
     background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
-                url('https://images.pexels.com/photos/9613423/pexels-photo-9613423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+                url('marvel-red-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

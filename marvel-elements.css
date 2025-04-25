@@ -1,0 +1,151 @@
+/* Marvel Periodic Table Themed Cards */
+@import url('./avengeance.css');
+
+.marvel-elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  perspective: 1200px;
+  margin: 2rem 0;
+}
+
+.marvel-product-card {
+  position: relative;
+  background: rgba(30, 30, 40, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 40px 0 #0ff6 0 1.5px 16px 0 #00f3;
+  overflow: hidden;
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  transition: box-shadow 0.4s, transform 0.2s cubic-bezier(.25,1.7,.45,.87);
+  clip-path: polygon(20% 0, 80% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 80%, 0 20%);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  min-height: 340px;
+}
+
+.marvel-product-card:hover {
+  box-shadow: 0 12px 60px 0 #ffb347cc, 0 1.5px 32px 0 #00f3;
+  transform: scale(1.04) rotateY(7deg) rotateX(2deg);
+}
+
+.particle-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.marvel-product-card.volumine .particle-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, #cd7f32aa 0%, transparent 70%);
+  filter: blur(10px);
+  opacity: 0.7;
+  animation: volumine-glow 2.5s infinite alternate;
+}
+
+.marvel-product-card.sodium .particle-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, #ffb347cc 0%, transparent 80%);
+  filter: blur(13px);
+  opacity: 0.8;
+  animation: sodium-flare 1.7s infinite alternate;
+}
+
+.marvel-product-card.salmon .particle-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, #00cfff99 0%, transparent 80%);
+  filter: blur(11px);
+  opacity: 0.8;
+  animation: salmon-liquid 3.2s infinite alternate;
+}
+
+@keyframes volumine-glow {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+@keyframes sodium-flare {
+  0% { opacity: 0.5; }
+  100% { opacity: 0.95; filter: blur(16px); }
+}
+@keyframes salmon-liquid {
+  0% { opacity: 0.6; transform: scaleY(1); }
+  100% { opacity: 0.95; transform: scaleY(1.07) skewY(2deg); }
+}
+
+.element-name {
+  font-family: 'Avengeance', 'Bangers', cursive;
+  font-size: 2.3rem;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 12px #fff7, 0 0 30px #ffb34766;
+  animation: jarvis-reveal 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes jarvis-reveal {
+  from { opacity: 0; letter-spacing: 0.5em; filter: blur(10px); }
+  to { opacity: 1; letter-spacing: 0.1em; filter: blur(0); }
+}
+
+.hero-divider {
+  width: 70%;
+  height: 6px;
+  margin: 0.8rem auto 1.2rem auto;
+  background: linear-gradient(90deg, #fff 0%, #ffb347 45%, #00cfff 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 18px 3px #fff8, 0 0 30px 6px #00cfff33;
+  animation: energy-beam 2s infinite linear alternate;
+}
+
+@keyframes energy-beam {
+  0% { box-shadow: 0 0 18px 3px #fff8, 0 0 30px 6px #00cfff33; }
+  100% { box-shadow: 0 0 30px 8px #ffb34788, 0 0 60px 12px #00cfff66; }
+}
+
+.power-description {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  min-height: 60px;
+  letter-spacing: 0.03em;
+}
+
+.mcu-style-tooltip {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: linear-gradient(145deg, #0ff, #00cfff);
+  color: #222;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-shadow: 0 0 8px #00cfff88;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.3s, color 0.3s;
+}
+.mcu-style-tooltip:hover {
+  background: linear-gradient(145deg, #ffb347, #fff);
+  color: #111;
+}
+
+@media (max-width: 650px) {
+  .marvel-product-card {
+    clip-path: polygon(50% 0, 100% 30%, 100% 100%, 0 100%, 0 30%);
+    border-radius: 2.1rem;
+    min-height: 270px;
+  }
+}
